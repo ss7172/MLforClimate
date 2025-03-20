@@ -38,7 +38,7 @@ The goal is to accurately forecast electricity usage by leveraging building attr
    - **Neural Networks** (LSTMs)  
    - **Ensembles** (stacking or averaging multiple models)  
 
-By evaluating these approaches with appropriate metrics (e.g., RMSE, MAE, or RMSLE), we seek to provide actionable insights for energy management and cost optimization. Ultimately, the project aims to enable data-driven decisions, enhance operational efficiency, and contribute to sustainable building operations.
+By evaluating these approaches with appropriate metrics (e.g., RMSE, MAE, or RMSLE), I seek to provide actionable insights for energy management and cost optimization. Ultimately, the project aims to enable data-driven decisions, enhance operational efficiency, and contribute to sustainable building operations.
 
 Source of dataset:
 https://www.kaggle.com/competitions/predicting-electricity-consumption/data
