@@ -1,4 +1,4 @@
-# Project Journal: ML On Climate - Energy Consumption and Cloud Coverage Imputation
+# Project Journal: ML On Climate - Energy Consumption 
 
 ## Overview
 
@@ -56,7 +56,7 @@ The goal of this project inspired by the ASHRAE – Great Energy Predictor III c
 
 ---
 
-## 3. Investigation of Missing Cloud Coverage
+## 3. Strategies to tackle missing Cloud Coverage
 
 ### Analysis by Building and Month
 - **Building-Level Analysis:**  
