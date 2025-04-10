@@ -2,9 +2,12 @@
 
 ## Overview
 
-This project is a Kaggle in-class competition inspired by the ASHRAE – Great Energy Predictor III challenge. The goal is to build predictive models for electricity consumption (meter_reading) using building metadata, historic usage, and weather data collected from 100 buildings across various sites worldwide. A particular challenge has been handling missing values in the weather variables, with cloud_coverage having a notably high missing rate (~43%).
-
+The goal of this project inspired by the ASHRAE – Great Energy Predictor III challenge is to build predictive models for electricity consumption (meter_reading) using building metadata, historic usage, and weather data collected from 100 buildings across various sites worldwide. 
 ## Week 1 updates 
+
+## challenges this week
+    - A particular challenge has been handling missing values in the weather variables, with cloud_coverage having a notably high missing rate (~43%).
+
 ---
 
 ## 1. Data Exploration & EDA
@@ -40,7 +43,7 @@ This project is a Kaggle in-class competition inspired by the ASHRAE – Great E
 ### Strategy for Minimal Missingness
 - **Minimal Columns:** `air_temperature`, `dew_temperature`, `precip_depth_1_hr`
 - **Approach:**  
-  - Applied `SimpleImputer` with strategy 'median' using a `ColumnTransformer`.
+  - Applied `SimpleImputer` with strategy 'mean', using a `ColumnTransformer`.
 
 ### Strategy for Moderate Missingness
 - **Moderate Columns:** `sea_level_pressure`, `wind_direction`
