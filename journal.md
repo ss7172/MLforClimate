@@ -76,3 +76,44 @@ The goal of this project inspired by the ASHRAE – Great Energy Predictor III c
   - Observed lower missingness during midday and higher rates during nighttime/early morning hours.
 
 ---
+## Time‐Based Interpolation
+
+**Rationale**  
+Since each building’s records follow a temporal order, a straightforward approach is to interpolate `cloud_coverage` values over time for each building’s time series. By treating the data chronologically, we aim to preserve local patterns (e.g., gradual changes from hour to hour).
+
+**Method Summary**  
+1. **Sort & Group by Building**: The data is sorted by `building_id` and timestamp, ensuring each building’s weather observations form a continuous time series.  
+2. **Time‐Dependent Filling**: Missing `cloud_coverage` entries are estimated by looking at neighboring timestamps, using a time‐based method that tries to remain faithful to each building’s local trends.  
+3. **Edge Cases**: Any leading or trailing gaps are resolved with forward/backward fills, preventing persistent NaNs at the edges.
+
+**Findings**  
+- **Advantages**: Easy to implement, works directly off the timestamp ordering, and helps fill many missing values without requiring advanced modeling.  
+- **Drawbacks**: Tends to smooth out fluctuations in cloud coverage, which may reduce variance and weaken correlations with other weather variables. Polynomial or spline variants often did not yield significant improvements in correlation.
+
+---
+
+## Multivariate Imputation (Iterative)
+
+**Rationale**  
+Time‐based interpolation alone might miss relationships with other weather parameters (like air temperature or dew temperature). A more sophisticated approach leverages several weather features and time indicators to “learn” how `cloud_coverage` behaves under different conditions.
+
+**Method Summary**  
+1. **Feature Inclusion**: Additional columns (e.g., `air_temperature`, `dew_temperature`, `sea_level_pressure`, `wind_speed`) provide contextual data, alongside time‐derived features (month, hour).  
+2. **Iterative Process**: A predictive model systematically estimates missing `cloud_coverage` by treating it as a regression target, looping through multiple refinement steps.  
+3. **Outcome**: This “multivariate” method often captures seasonal patterns or non‐linear effects better than a simple time interpolation.
+
+**Findings**  
+- **Advantages**: Improves correlations between `cloud_coverage` and other weather features, potentially providing more accurate estimates of missing values.  
+- **Drawbacks**: Computationally heavier than a simple time‐based approach and more complex to tune. The direct impact on `meter_reading` predictions remains to be validated.
+
+
+
+## Planned next steps for Missing cloud values
+- Cluster based startegies
+- Season specific imputation
+- Modelling location dependencies without explicit geographic data
+    - Using building id as a proxy for location 
+    - Aggregate weather patterns per building and unsupervised clustering
+    - Incorporating time based features for seasonality
+
+--
