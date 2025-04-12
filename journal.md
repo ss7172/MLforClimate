@@ -117,3 +117,5 @@ Time‐based interpolation alone might miss relationships with other weather par
     - Incorporating time based features for seasonality
 
 --
+## 4. Implementing Models on the different datasets created after EDA
+
