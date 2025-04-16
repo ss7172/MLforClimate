@@ -122,3 +122,8 @@ Time‐based interpolation alone might miss relationships with other weather par
 - Building id 53 has around 92% 0-meter reading values
 - all the other variables including those on weather are extremely skewed
 
+- Plotted building plots for meter reading to see trends
+- Manually verified the data after sorting the dataset on `building_id` and `timestamp`
+- Pattern emerged. All building id's have regular data points after `2016/05/20 17:00:00`
+- Removed building-id 53 from the dataset.
+- Please refer to datapoints.csv for details on the exact date post which the building_id's show regular meter_readings.
