@@ -117,6 +117,8 @@ Time‐based interpolation alone might miss relationships with other weather par
     - Incorporating time based features for seasonality
 
 --
+## Week 2 updates
+
 ## 4. Implementing Models on the different datasets created after EDA
 - The data after cleaning up all missing values has a lot of 0 values
 - Building id 53 has around 92% 0-meter reading values
