@@ -127,3 +127,5 @@ Time‐based interpolation alone might miss relationships with other weather par
 - Pattern emerged. All building id's have regular data points after `2016/05/20 17:00:00`
 - Removed building-id 53 from the dataset.
 - Please refer to datapoints.csv for details on the exact date post which the building_id's show regular meter_readings.
+- Implemented baseline models - LBGM, XGBoost and tuned the hyperparameters of XGboost - RMSE is around 95%
+- Next to try - feature engineering - Challenges - random spikes in meter_reading - can it be explained somehow on the basis of features ??!
