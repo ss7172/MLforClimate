@@ -131,7 +131,7 @@ Time‐based interpolation alone might miss relationships with other weather par
 - Please refer to datapoints.csv for details on the exact date post which the building_id's show regular meter_readings.
 - Implemented baseline models - LBGM, XGBoost and tuned the hyperparameters of XGboost - RMSE is around 95 kWh
 - Engineered features - both rolling and lagged features based on time and weather.
-- Total number of features - 53.
+- Total number of features - 54.
 - Implemented LightGBM with test RMSE of 49 kWh which is a significant drop.
 --
 ## Week 3 updates
@@ -147,3 +147,5 @@ Time‐based interpolation alone might miss relationships with other weather par
       Instead of forcing the model to combine air‑temperature, cloud cover, holiday flag, and square‑feet every time, the actual outcome from last week has already merged those influences.
     - Robust to missing external info
       We don’t know location, holidays, or local weather station quality for each site. Last‑week demand already baked all those unknowns into a single number.
+
+- Next to implement an ensemble of lightgbm and xgboost.
