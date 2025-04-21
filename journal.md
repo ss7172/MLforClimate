@@ -132,5 +132,18 @@ Time‐based interpolation alone might miss relationships with other weather par
 - Implemented baseline models - LBGM, XGBoost and tuned the hyperparameters of XGboost - RMSE is around 95 kWh
 - Engineered features - both rolling and lagged features based on time and weather.
 - Total number of features - 53.
-- Implemented LightGBM with test RMSE of 16.27 kWh which is a significant drop.
-- Implemented XGBoost (tuned hyperparametes) with test RMSE of 
+- Implemented LightGBM with test RMSE of 49 kWh which is a significant drop.
+--
+## Week 3 updates
+
+- Implemented XGBoost (tuned hyperparametes) with test RMSE of 55 kwh
+- A feature that measures the `meter_reading_last_week` was significant in improving the prediction accuracy
+  - What the feature captures - some thoughts that come to my mind are as follows:
+    -  Weekly human routines – office hours, class schedules, weekend shut‑downs, cleaning cycles.
+      For most commercial, educational, and residential buildings electricity demand repeats on a 7‑day rhythm far more strongly than on a pure 24‑hour or 30‑day one.
+    - Latent building‑specific baseline
+      Every building has its own size, HVAC tuning, always‑on loads, etc. A 1‑week lag for that building provides a personalised “anchor” the model can start from.
+    - Implicit interaction of many covariates (weather, occupancy, equipment state)
+      Instead of forcing the model to combine air‑temperature, cloud cover, holiday flag, and square‑feet every time, the actual outcome from last week has already merged those influences.
+    - Robust to missing external info
+      We don’t know location, holidays, or local weather station quality for each site. Last‑week demand already baked all those unknowns into a single number.
