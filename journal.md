@@ -136,7 +136,7 @@ Time‐based interpolation alone might miss relationships with other weather par
 --
 ## Week 3 updates
 
-- Implemented XGBoost (tuned hyperparametes) with test RMSE of 55 kwh
+- Implemented XGBoost (tuned hyperparametes) with test RMSE of 59 kwh
 - A feature that measures the `meter_reading_last_week` was significant in improving the prediction accuracy
   - What the feature captures - some thoughts that come to my mind are as follows:
     -  Weekly human routines – office hours, class schedules, weekend shut‑downs, cleaning cycles.
@@ -148,4 +148,6 @@ Time‐based interpolation alone might miss relationships with other weather par
     - Robust to missing external info
       We don’t know location, holidays, or local weather station quality for each site. Last‑week demand already baked all those unknowns into a single number.
 
-- Next to implement an ensemble of lightgbm and xgboost.
+  - Implemented feature importance methods - SHAP and gain to figure out what are the important features contributing to prediction accuracy
+  - Implemented two stacking models - one with Ridge regression as final estimator with an RMSE of 51kwH and another meta learner estimator based on lgb with RMSE of 47KwH.
+  - Next to implement energy saving potential.
