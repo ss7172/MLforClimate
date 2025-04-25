@@ -150,4 +150,6 @@ Time‐based interpolation alone might miss relationships with other weather par
 
   - Implemented feature importance methods - SHAP and gain to figure out what are the important features contributing to prediction accuracy
   - Implemented two stacking models - one with Ridge regression as final estimator with an RMSE of 51kwH and another meta learner estimator based on lgb with RMSE of 47KwH.
+  - Implemented the feature based models on the dataset that was based on time-based interpolation to impute missing cloud coverate.
+  - The ML algorithms do slightly better in terms of their predictive accuracy on the Iterative imputer based cleaned dataset than the time-based interpolation dataset.
   - Next to implement energy saving potential.
