@@ -153,4 +153,5 @@ Time‐based interpolation alone might miss relationships with other weather par
   - Implemented the feature based models on the dataset that was based on time-based interpolation to impute missing cloud coverate.
   - The ML algorithms do slightly better in terms of their predictive accuracy on the Iterative imputer based cleaned dataset than the time-based interpolation dataset.
   - Implemented Random forest - both datasets (time based interpolation and iterative imputer) show similar results with iterative imputer doing slightly better again.
+  - Implemented 3 variations of LSTM's
   - Next to implement energy saving potential.
